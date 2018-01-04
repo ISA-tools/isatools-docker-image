@@ -5,3 +5,17 @@ docker build -t isatools/isatools:3.6-slim-stretch-0.9.4 .
 ```
 
 Find the built images at https://hub.docker.com/r/isatools/isatools/tags/
+
+To pull the latest, 
+
+```
+docker pull isatools/isatools:latest
+```
+
+or use,
+
+```
+FROM isatools/isatools:latest
+```
+
+in your `Dockerfile`.
