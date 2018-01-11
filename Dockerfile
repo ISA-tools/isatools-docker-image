@@ -21,5 +21,4 @@ RUN apk add --no-cache --virtual isatools-build-deps \
             python3-dev  \
     && pip3 install isatools==0.9.4 \
     && apk del isatools-build-deps \
-    && rm -rf /var/cache/apk/* \
-    && rm -rf /tmp/* /var/tmp/*
+    && rm -rf /root/.cache # pip's cache
