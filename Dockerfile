@@ -7,10 +7,18 @@ LABEL software.version="0.9.4"
 LABEL version="1.1"
 LABEL software="ISA API"
 
-RUN echo "Installing software" >&2 \
-    && apk add --no-cache python3 bash \
-    && apk add --no-cache --virtual isatools-build-deps ca-certificates g++ python3-dev libxml2-dev libxslt-dev \
+RUN echo "Installing software" >&2
+RUN apk add --no-cache \
+                bash \
+                libxslt \
+                python3
+
+RUN apk add --no-cache --virtual isatools-build-deps \
+            ca-certificates \
+            g++ \
+            libxml2-dev \
+            libxslt-dev \
+            python3-dev  \
     && pip3 install isatools==0.9.4 \
     && apk del isatools-build-deps \
-    && rm -rf /var/cache/apk/* \
-    && rm -rf /tmp/* /var/tmp/*
+    && rm -rf /root/.cache # pip's cache
