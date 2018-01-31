@@ -9,8 +9,8 @@ LABEL software="ISA API"
 
 RUN echo "Installing software" >&2 \
     && apk add --no-cache python3 bash \
-    && apk add --no-cache --virtual isatools-build-deps ca-certificates g++ python3-dev libxml2-dev libxslt-dev \
+    && apk add --no-cache ca-certificates g++ python3-dev libxml2-dev libxslt-dev \
     && pip3 install isatools==0.9.5 \
-    && apk del isatools-build-deps \
+    && apk del ca-certificates g++ python3-dev \
     && rm -rf /var/cache/apk/* \
     && rm -rf /tmp/* /var/tmp/*
