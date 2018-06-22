@@ -1,7 +1,7 @@
 Dockerfile for ISA API base image based on python docker images from DockerHub.
 
 ```
-docker build -t isatools/isatools:3.6-alpine-0.9.5 .
+docker build -t isatools/isatools:3.6-alpine-0.10-develop .
 ```
 
 Find the built images at https://hub.docker.com/r/isatools/isatools/tags/
